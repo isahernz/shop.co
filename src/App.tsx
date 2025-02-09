@@ -1,7 +1,14 @@
+import { BrandsBanner, Header, Hero, NewArrivals } from "./components/";
+
 function App() {
   return (
     <>
-      <h1>Hello World</h1>
+      <Header />
+      <main>
+        <Hero />
+        <BrandsBanner />
+        <NewArrivals />
+      </main>
     </>
   );
 }
