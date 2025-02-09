@@ -2,7 +2,7 @@ import { ProductProps } from "../../types/product";
 
 export const ProductCard = ({ id, title, price, image }: ProductProps) => {
   return (
-    <article className="w-full max-w-56 shrink-0">
+    <article className="w-full min-w-56 max-w-[296px] shrink-0 snap-center">
       <figure className="w-full h-auto mb-3 rounded-3xl bg-ivory-mist grid place-content-center aspect-square">
         <img
           src={image}
