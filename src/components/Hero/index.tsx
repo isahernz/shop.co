@@ -20,30 +20,27 @@ export const Hero = () => {
   ];
 
   return (
-    <section className="bg-gray-soft">
-      <div className="px-4 pt-10 max-w-2xl">
-        <div className="flex flex-col gap-5 mb-6">
-          <h1 className="text-4xl font-bold">
+    <section className="  bg-gray-soft">
+      <div className="flex flex-col md:flex-row md:justify-between  max-w-7xl mx-auto">
+        <div className="flex flex-col gap-5 px-4 mb-6 max-w-2xl py-10 md:py-28">
+          <h1 className="text-4xl lg:text-6xl text-balance font-bold uppercase font-bowlby tracking-wider">
             FIND CLOTHES THAT MATCHES YOUR STYLE
           </h1>
-          <p className="text-sm text-black/60 text-pretty">
+          <p className="text-sm lg:text-base text-black/60 text-pretty ">
             Browse through our diverse range of meticulously crafted garments,
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
+          <Button label="Shop Now" className="bg-black text-white" />
+          <div className="flex flex-wrap gap-x-8 gap-y-3 justify-center mt-6">
+            {highlights.map((highlight) => (
+              <StoreHighlight key={highlight.id} {...highlight} />
+            ))}
+          </div>
         </div>
-        <Button label="Shop Now" className="bg-black text-white" />
-        <div className="flex flex-wrap gap-x-8 gap-y-3 justify-center mt-6">
-          {highlights.map((highlight) => (
-            <StoreHighlight key={highlight.id} {...highlight} />
-          ))}
-        </div>
+
+        <div className="bg-[url('/trendy-fashionable-couple-posing.jpg')] bg-no-repeat bg-cover w-full h-[448px] md:bg-center md:h-auto lg:bg-[center_top_1rem]"></div>
       </div>
-      <img
-        src={trendyPosing}
-        alt="Trendy Fashionable Couple Posing"
-        className="w-full h-full object-cover"
-      />
     </section>
   );
 };
