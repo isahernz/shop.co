@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@theme {
+  --color-gray-soft: #f2f0f1;
+  --color-ivory-mist: #f0eeed;
+
+  --grid-dinamyc: repeat(auto-fit, minmax(min(100%, 1fr), 1fr));
+}
