@@ -1,8 +1,29 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: BowlbyOneSC;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/BowlbyOneSC-Regular.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: Satoshi;
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/Satoshi-Variable.ttf") format("woff2");
+}
+
 @theme {
   --color-gray-soft: #f2f0f1;
   --color-ivory-mist: #f0eeed;
+
+  --font-bowlby: "BowlbyOneSC", "sans-serif";
+  --font-sans: "Satoshi", "sans-serif";
+
+  --background-image: url("/trendy-fashionable-couple-posing.jpg");
 
   --grid-dinamyc: repeat(auto-fit, minmax(min(100%, 1fr), 1fr));
 }
