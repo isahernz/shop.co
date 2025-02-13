@@ -9,7 +9,7 @@ export const Button = ({ label, className }: ButtonProps) => {
   return (
     <button
       className={cn(
-        "w-full h-14 py-4 inline-flex justify-center items-center rounded-full",
+        "w-full md:max-w-52 h-14 py-4 inline-flex justify-center items-center rounded-full font-medium",
         className
       )}
     >
