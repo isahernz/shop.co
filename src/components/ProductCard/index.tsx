@@ -10,10 +10,10 @@ export const ProductCard = ({ id, title, price, image }: ProductProps) => {
           className="size-40 mix-blend-multiply object-contain "
         />
       </figure>
-      <div className="flex flex-col gap-y-1">
+      <div className="flex flex-col gap-y-1 text-start">
         <a
           href={`/product/${id}`}
-          className="text-baseb text-pretty font-bold text-black"
+          className="text-base text-pretty font-bold text-black"
         >
           {title}
         </a>
