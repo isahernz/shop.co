@@ -23,3 +23,11 @@
   --font-bowlby: "BowlbyOneSC", "sans-serif";
   --font-sans: "Satoshi", "sans-serif";
 }
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
