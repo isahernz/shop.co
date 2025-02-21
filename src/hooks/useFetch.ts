@@ -13,14 +13,14 @@ export const useFetch = <T>(url: string) => {
         setData(result);
       } catch (err) {
         setError(
-          err instanceof Error ? error : new Error("Upps! Ocurred an error")
+          err instanceof Error ? err : new Error("Upps! Ocurred an error")
         );
       } finally {
         setLoading(false);
       }
     };
     fetchData();
-  }, []);
+  }, [url]);
 
   return { data, error, loading };
 };
