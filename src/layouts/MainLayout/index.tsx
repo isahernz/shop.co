@@ -1,4 +1,4 @@
-import { Header } from "../../components";
+import { Navbar } from "../../components";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -7,7 +7,7 @@ interface MainLayoutProps {
 export const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <div>
-      <Header />
+      <Navbar />
       <main className="px-4 py-5">{children}</main>
     </div>
   );
