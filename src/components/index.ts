@@ -1,6 +1,6 @@
 export * from "./Brand";
 export * from "./BrandsBanner";
-export * from "./Header";
+export * from "./Navbar";
 export * from "./Hero";
 export * from "./Logo";
 export * from "./NewArrivals";
