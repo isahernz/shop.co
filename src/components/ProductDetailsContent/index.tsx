@@ -1,10 +1,13 @@
-import { ProductQuantitySelector } from "../../components/ProductQuantitySelector";
+import { useContext } from "react";
 import { AddToCartButton } from "../../components/AddToCartButton";
+import { ProductQuantitySelector } from "../../components/ProductQuantitySelector";
+import { ShoppingCartContext } from "../../context/ShoppingCartContext";
 import { useFetch } from "../../hooks/useFetch";
 import { ProductProps } from "../../types/product";
 
 export const ProductDetailsContent = ({ id }: { id: string | undefined }) => {
-  console.log("Content reendered");
+  const context = useContext(ShoppingCartContext);
+
   const {
     data: product,
     error,
@@ -13,6 +16,12 @@ export const ProductDetailsContent = ({ id }: { id: string | undefined }) => {
 
   if (loading) return <p>Loading product...</p>;
   if (error) return <p>Error</p>;
+
+  const addToCart = () => {
+    context.setCount(context.count + 1);
+  };
+
+  // console.log(cartItems, "My shooping");
 
   return (
     <section className="flex flex-col gap-y-6 sm:flex-row sm:gap-x-6 max-w-6xl mx-auto">
@@ -37,7 +46,7 @@ export const ProductDetailsContent = ({ id }: { id: string | undefined }) => {
         </div>
         <div className="flex items-center gap-3">
           <ProductQuantitySelector />
-          <AddToCartButton label="Add to Cart" />
+          <AddToCartButton label="Add to Cart" handleOnClick={addToCart} />
         </div>
       </div>
     </section>
