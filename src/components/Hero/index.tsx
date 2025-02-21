@@ -1,5 +1,5 @@
 import { HighlightProps } from "../../types/highlight";
-import { Button } from "../Button";
+import { ActionLink } from "../ActionLink";
 import { StoreHighlight } from "../StoreHighlight";
 
 export const Hero = () => {
@@ -21,7 +21,7 @@ export const Hero = () => {
     <section className="bg-gray-soft">
       <div className="flex flex-col md:flex-row  max-w-6xl mx-auto">
         <div className="px-4 max-w-2xl pt-10 md:py-28 lg:px-0">
-          <h1 className="text-4xl  text-balance font-bold uppercase font-bowlby tracking-wider mb-5 lg:text-6xl lg:mb-8">
+          <h1 className="text-4xl text-balance font-bold uppercase font-bowlby tracking-wider mb-5 lg:text-6xl lg:mb-8">
             FIND CLOTHES THAT MATCHES YOUR STYLE
           </h1>
           <p className="text-sm lg:text-base text-black/60 text-pretty mb-6 lg:mb-8">
@@ -29,7 +29,11 @@ export const Hero = () => {
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
-          <Button label="Shop Now" className="bg-black text-white" />
+          <ActionLink
+            label="Shop Now"
+            route="/"
+            className="bg-black text-white"
+          />
           <div className="flex flex-wrap gap-x-8 gap-y-3 justify-center mt-5 lg:mt-12 lg:justify-start">
             {highlights.map((highlight) => (
               <StoreHighlight key={highlight.id} {...highlight} />
