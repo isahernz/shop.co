@@ -1,9 +1,9 @@
-import { BrandsBanner, Header, Hero, NewArrivals } from "./components/";
+import { BrandsBanner, Navbar, Hero, NewArrivals } from "./components/";
 
 function App() {
   return (
     <>
-      <Header />
+      <Navbar />
       <main>
         <Hero />
         <BrandsBanner />
