@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { ProductProps } from "../../types/product";
 
 export const ProductCard = ({ id, title, price, image }: ProductProps) => {
@@ -11,12 +12,12 @@ export const ProductCard = ({ id, title, price, image }: ProductProps) => {
         />
       </figure>
       <div className="flex flex-col gap-y-1 text-start">
-        <a
-          href={`/product/${id}`}
+        <Link
+          to={`/product/${id}`}
           className="text-base text-pretty font-bold text-black"
         >
           {title}
-        </a>
+        </Link>
         <p className="text-xl text-black font-bold slashed-zero tabular-nums">
           ${price}
         </p>
