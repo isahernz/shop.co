@@ -1,12 +1,11 @@
-import { useContext } from "react";
 import { AddToCartButton } from "../../components/AddToCartButton";
 import { ProductQuantitySelector } from "../../components/ProductQuantitySelector";
-import { ShoppingCartContext } from "../../context/ShoppingCartContext";
 import { useFetch } from "../../hooks/useFetch";
 import { ProductProps } from "../../types/product";
+import { useShoppingCart } from "../../hooks/useShoppingCart";
 
 export const ProductDetailsContent = ({ id }: { id: string | undefined }) => {
-  const context = useContext(ShoppingCartContext);
+  const { addToCart } = useShoppingCart();
 
   const {
     data: product,
@@ -17,11 +16,11 @@ export const ProductDetailsContent = ({ id }: { id: string | undefined }) => {
   if (loading) return <p>Loading product...</p>;
   if (error) return <p>Error</p>;
 
-  const addToCart = () => {
-    context.setCount(context.count + 1);
+  const handleAddToCart = () => {
+    if (product) {
+      addToCart(product);
+    }
   };
-
-  // console.log(cartItems, "My shooping");
 
   return (
     <section className="flex flex-col gap-y-6 sm:flex-row sm:gap-x-6 max-w-6xl mx-auto">
@@ -45,8 +44,11 @@ export const ProductDetailsContent = ({ id }: { id: string | undefined }) => {
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <ProductQuantitySelector />
-          <AddToCartButton label="Add to Cart" handleOnClick={addToCart} />
+          <ProductQuantitySelector initialValue={product?.quantity} />
+          <AddToCartButton
+            label="Add to Cart"
+            handleOnClick={handleAddToCart}
+          />
         </div>
       </div>
     </section>
